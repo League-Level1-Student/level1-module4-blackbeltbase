@@ -22,9 +22,10 @@ public void run() {
 	panel.add(treat);
 	panel.add(trick);
 	trickyFrame.add(panel);
+	trickyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	trickyFrame.pack();
 	trickyFrame.setVisible(true);
-	trickyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 }
 
 @Override

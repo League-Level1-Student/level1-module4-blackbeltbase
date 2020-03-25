@@ -20,7 +20,7 @@ private JFrame createChuckles() {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	joke.setText("joke");
-
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	punchline.setText("punchline");
 	joke.addActionListener(this);
 	punchline.addActionListener(this);

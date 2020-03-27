@@ -23,13 +23,18 @@ public class Calculator implements ActionListener {
 	 JButton div = new JButton("div");
 	 JButton mult = new JButton("mult");
 	 JFrame frame = new JFrame();
+		@SuppressWarnings("deprecation")
 		public void run() {
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 add.addActionListener(this);
+		 div.addActionListener(this);
+		 mult.addActionListener(this);
+		 sub.addActionListener(this);
 		 panel.add(add);
 		 panel.add(sub);
 		 panel.add(div);
 		 panel.add(mult);
+		 output.resize(15, 15);
 		 panel.add(number1);
 		 panel.add(number2);
 		 frame.add(panel);
@@ -39,25 +44,25 @@ public class Calculator implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			int outputYes = 0;
+			int outputValue = 0;
 			JButton buttonPressed = (JButton) e.getSource();
 			int num1 = Integer.parseInt(number1.getText());
 			int num2 = Integer.parseInt(number2.getText());
 			if(buttonPressed == add) {
-				outputYes = num1+num2;
+				outputValue = num1+num2;
 			}
-			else if(buttonPressed == sub) {
-				outputYes = num1-num2;
+			if(buttonPressed == sub) {
+				outputValue = num1-num2;
 			}
-			else if(buttonPressed == mult) {
-				outputYes = num1*num2;
+			if(buttonPressed == mult) {
+				outputValue = num1*num2;
 			}
-			else if(buttonPressed == div) {
-				outputYes = num1/num2;
+			if(buttonPressed == div) {
+				outputValue = num1/num2;
 			}
-			String ye =  Integer. toString(outputYes);
-				output.setText(ye);
-				System.out.println(ye);
+			String outputAccess =  Integer. toString(outputValue);
+				output.setText("output:"+outputAccess);
+				System.out.println(outputAccess);
 				 panel.add(output);
 				frame.pack();
 			}

@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements ActionListener {
-JFrame throwMoneyAway = new JFrame();
-JPanel panel = new JPanel();
+JFrame throwMoneyAway;
+JPanel panel;
 JButton spin = new JButton();
 int score = 0;
 JLabel showScore = new JLabel();
@@ -27,6 +27,8 @@ JLabel showScore = new JLabel();
 	JLabel reel2 = null;
 	JLabel reel3 = null;
 	void run() throws MalformedURLException {
+		panel = new JPanel();
+		throwMoneyAway = new JFrame();
 		throwMoneyAway.setVisible(true);
 		String toString = Integer.toString(score);
 		showScore.setText("Wins: "+toString);
@@ -86,14 +88,16 @@ JLabel showScore = new JLabel();
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub\
+		JButton buttonPressed = (JButton) e.getSource();
+		if(buttonPressed == spin) {
 		throwMoneyAway.dispose();
 			try {
 				run();
 			} catch (MalformedURLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}
+			}}
 		}
 
 	
